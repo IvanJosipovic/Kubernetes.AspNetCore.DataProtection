@@ -21,7 +21,8 @@
     <SuppressTrimAnalysisWarnings>false</SuppressTrimAnalysisWarnings>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <TrimmerSingleWarn>false</TrimmerSingleWarn>
-    <NoWarn>$(NoWarn);</NoWarn>
+    <!-- net11.0 is prerelease and intentionally depends on prerelease framework packages. -->
+    <NoWarn>$(NoWarn);NU5104</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
@@ -45,4 +46,3 @@
   </ItemGroup>
 
 </Project>
-
