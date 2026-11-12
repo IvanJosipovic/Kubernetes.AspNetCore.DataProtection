@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net9.0;net10.0;net11.0</TargetFrameworks>
+    <TargetFrameworks>net10.0;net11.0</TargetFrameworks>
     <Authors>Ivan Josipovic</Authors>
     <Description>Support for storing AspNet DataProtection keys using Kubernetes Secrets</Description>
     <PackageTags>AspNet DataProtection Kubernetes</PackageTags>
@@ -21,8 +21,6 @@
     <SuppressTrimAnalysisWarnings>false</SuppressTrimAnalysisWarnings>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <TrimmerSingleWarn>false</TrimmerSingleWarn>
-    <!-- net11.0 is prerelease and intentionally depends on prerelease framework packages. -->
-    <NoWarn>$(NoWarn);NU5104</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
@@ -31,10 +29,6 @@
 
   <ItemGroup>
     <PackageReference Include="KubernetesClient" Version="21.0.8" />
-  </ItemGroup>
-
-  <ItemGroup Condition="'$(TargetFramework)' == 'net9.0'">
-    <PackageReference Include="Microsoft.AspNetCore.DataProtection" Version="9.0.23" />
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'net10.0'">
